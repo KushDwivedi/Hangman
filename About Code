@@ -1,0 +1,34 @@
+1. Import the `random` module for random number generation.
+
+2. Open a file (you need to provide the file path in the `open` function) and read all lines into a list called `words`.
+
+3. Randomly select a word from the list of words and store it in the variable `word`.
+
+4. Set the initial number of allowed errors to 7 using `allowed_errors`.
+
+5. Initialize an empty list called `guesses` to keep track of the letters guessed by the player.
+
+6. Initialize a boolean variable `done` to `False`. This variable will be used to determine if the player has guessed the entire word.
+
+7. Enter a loop that continues until the `done` variable becomes `True`.
+
+   - Loop through each letter in the `word`.
+     - If the letter is present in the `guesses` list (after converting to lowercase), print the letter followed by a space.
+     - If the letter is not in the `guesses` list, print a space to represent a hidden letter.
+   - Print an empty line to separate each row of guessed letters.
+
+   - Take user input for the next guess and display the number of allowed errors left.
+
+   - Add the guessed letter (converted to lowercase) to the `guesses` list.
+
+   - If the guessed letter is not in the `word`, decrement the `allowed_errors` counter. If `allowed_errors` reaches 0, exit the loop.
+
+   - Check if the player has guessed all the letters in the word. If all letters are guessed, set `done` to `True`.
+
+8. After exiting the loop, check if the player has won or lost.
+   - If `done` is `True`, print a victory message along with the correct word.
+   - If `done` is `False`, print a game over message along with the correct word.
+
+Please note that there's a potential issue with the code. The `done` variable is set to `True` after the first iteration of the loop. It should be set to `True` only when the player has successfully guessed all the letters in the word. To fix this, you should move the line `done=True` outside the loop that checks if the player has guessed all the letters.
+
+Also, you need to provide the path to a file containing a list of words for the game to work correctly.
